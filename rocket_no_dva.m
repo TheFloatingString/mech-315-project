@@ -7,36 +7,36 @@ function f = rocket_no_dva(t, y)
 f = zeros(12,1);
 
 % engine constants
-F0_eng1 = 0.01; % in [m]
-F0_eng2 = 0.01;
-w_eng1 = 2*pi*200; % in [rad/s]
-w_eng2 = 2*pi*200;
+F0_eng1 = 1e10; % in [m]
+F0_eng2 = 1e10;
+w_eng1 = 2*pi*20; % in [rad/s]
+w_eng2 = 2*pi*20;
 phi_eng_1 = 0;  % in [rad]
 phi_eng_2 = 0; 
 
 % mass in units of [kg]
-m_eng1 = 1000;
-m_eng2 = 1000;
-m_stg1 = 1e5;
-J_0 = 1e5;
-m_stg2 = 1e5;
-m_pay = 1e3;
+m_eng1 = 1e5;
+m_eng2 = 1e5;
+m_stg1 = 1e1;
+J_0 = 1e1;
+m_stg2 = 1e1;
+m_pay = 1e1;
 % damper in units of [?] TODO
-c_1 = 1e2;
-c_2 = 1e2;
-c_3 = 1e2;
-c_4 = 1e2;
+c_1 = 1e-10;
+c_2 = 1e-10;
+c_3 = 1e-10;
+c_4 = 1e-10;
 % spring in unites of [N/m]
-k_1 = 1e10;
-k_2 = 1e10;
-k_3 = 1e10;
-k_4 = 1e10;
+k_1 = 0.01;
+k_2 = 0.01;
+k_3 = 0.01;
+k_4 = 0.01;
 % length of beam in [m]
 l = 1;
 
 % define equations
 f(1) = y(2);
-f(2) = F0_eng1*cos(w_eng1*t+phi_eng_1)/m_eng1-c_1/m_eng1*y(2)+c_3/m_eng1*y(6)-k_1/m_eng1*y(1)+k_1/m_eng1*y(5);
+f(2) = F0_eng1*cos(w_eng1*t+phi_eng_1)/m_eng1-c_1/m_eng1*y(2)+c_1/m_eng1*y(6)-k_1/m_eng1*y(1)+k_1/m_eng1*y(5);
 f(3) = y(4);
 f(4) = F0_eng2*cos(w_eng2*t+phi_eng_2)/m_eng2-c_2/m_eng2*y(4)+c_2/m_eng2*y(6)-k_2/m_eng2*y(3)+k_2/m_eng2*y(5);
 f(5) = y(6);
