@@ -4,7 +4,7 @@ Modelling the vibration response of a Falcon 9 rocket using a spring-mass-damper
 
 ### Our Findings
 
-+ Mid-range stiffness (1e6 range) causes more variability in the frequency response, while high-range stiffness causes a more periodic response
++ Mid-range stiffness (1e6 range) causes more variability in the frequency response, while high-range stiffness causes the entire rocket to have approximately the same response
 
 ### Limitations
 
